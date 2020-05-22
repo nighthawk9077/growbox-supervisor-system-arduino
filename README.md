@@ -1,8 +1,8 @@
 # growbox-supervisor-system-arduino
 # The GROWbox Supervisor System (GROWSS)
 
-Todd Moore
-Copywrite, 2019 MIT License
+Nighthawk
+Copywrite, 2020 MIT License
 
 ### Change Log:
 
@@ -11,7 +11,6 @@ Copywrite, 2019 MIT License
             - temp, humidity, pressure & soil moisture
             - alarms, hi & lows
             - controlls light, exhaust fan, & humidifier
-
 ___________________________________________________________________________________________
 
 ### This is my design of a GROWbox Supervisor System (GROWSS) Arduino Version. The GROWSS system monitors temp, humidty, & soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier.
