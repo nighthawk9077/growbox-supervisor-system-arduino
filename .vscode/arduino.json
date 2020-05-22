@@ -1,0 +1,7 @@
+{
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560",
+    "port": "/dev/tty.usbmodem141201",
+    "programmer": "AVRISP mkII",
+    "sketch": "growss.ino"
+}
