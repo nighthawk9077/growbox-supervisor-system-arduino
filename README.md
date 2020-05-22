@@ -1,5 +1,4 @@
-# growbox-supervisor-system-arduino
-# The GROWbox Supervisor System (GROWSS)
+# The GROWbox Supervisor System (GROWSS) - Arduino Version
 
 Nighthawk
 Copywrite, 2020 MIT License
