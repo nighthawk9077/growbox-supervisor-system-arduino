@@ -13,7 +13,7 @@ Copywrite, 2020 MIT License
             - controlls light, exhaust fan, & humidifier
 ___________________________________________________________________________________________
 
-### This is my design of a GROWbox Supervisor System (GROWSS) Arduino Version. The GROWSS system monitors temp, humidty, & soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier.
+### This is my design of a GROWbox Supervisor System (GROWSS) Arduino Version. The GROWSS system monitors temp, humidty, & soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & humidifier.
 
 ### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present.
 
