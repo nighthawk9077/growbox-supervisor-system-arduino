@@ -17,7 +17,7 @@ ________________________________________________________________________________
 
 ### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present.
 
-### The GROWSS system will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
+### The GROWSS system will be used in a 2'x4'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
 
 ### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
