@@ -1,7 +1,6 @@
 # The GROWbox Supervisor System (GROWSS) - Arduino Version
 
 Author: Nighthawk
-
 Copywrite, 2020 MIT License
 
 ### Change Log:
