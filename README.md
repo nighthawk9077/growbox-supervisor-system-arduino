@@ -49,7 +49,7 @@ ________________________________________________________________________________
 ####  Understanding Scope in functions: <https://forum.arduino.cc/index.php?topic=383064.0>
 ####  Debugging Using Serial.print: <https://www.electrosoftcloud.com/en/debug-with-serial-print/>
 ####  Assigning IP addresses, etc for Ethernet Shields: <https://giovanniorgantini.wordpress.com/2015/03/02/using-the-arduino-ethernet-shield>
-
+  
 #### Working Design goals are:
 
 - [x] Read Temp (temp/humidity sensor)
