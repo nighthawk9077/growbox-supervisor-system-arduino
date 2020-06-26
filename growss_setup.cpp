@@ -20,39 +20,22 @@
         - Code compiles but has not been tested with the Blynk mobile app yet
             - got to get local server configured for an additional device & design new Blynk mobile app
 ########
-
-########
-# classes & methods
-########
 */
-#pragma once
-
-#ifndef _CHECK_ALARMS_H_
-#define _CHECK_ALARMS_H_
 #include <Arduino.h>
+#include "growss_setup.h"
 
-class Alarms {
-    public:
-        // hardware
-        bool lightIsOn;
-        bool exhaustFanIsOn;
-        bool humidifierIsOn;
+void setup_atmega2560() {
+    // setup ATMega pins
+    pinMode(EXHAUST_FAN, OUTPUT); // exhaust fan relay  
+    pinMode(HUMIDIFIER, OUTPUT);     // humidifier relay
+    pinMode(LIGHT, OUTPUT);     // grow light relay
+    pinMode(BUZZER, OUTPUT);    
+    pinMode(HUMIDIFIER, OUTPUT);    // humidifier control
+    pinMode(AIRFLOW_FAN, OUTPUT);
+    
+    // add analog pins
+    pinMode(MOISTURE1, INPUT);  // soil moisture sensor #1
+    pinMode(MOISTURE2, INPUT);  // soil moisture sensor #2
+    pinMode(DENSITY, INPUT);    // mq2 air/density sensor
+}
 
-        // alarm_status
-        bool tempAlarmIsOn;
-        bool humidAlarmIsOn;
-        String moist1AlarmStatus;
-        String moist2AlarmStatus;
-
-        // alarm threasholds. ie at what value does the alarm go off
-        float hiTempAlarmThreashold;
-        float lowTempAlarmThreashold;
-        float hiHumidityAlarmThreashold;
-        float lowHumidityAlarmThreashold;
-        float hiDensityAlarmThreashold;
-
-        // methods
-        bool check_alarm(float, float, float);
-        String check_moisture_alarms(int);
-};
-#endif

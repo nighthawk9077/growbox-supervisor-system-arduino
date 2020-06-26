@@ -1,28 +1,50 @@
 /*
 ########
-    Nighthawk
-    4.20.20
-    Version: V20-20-04
-    
-    This project is released under The MIT License (MIT)
-    Copyright 2019 Nighthawk
+# The GROWbox Supervisor System (GROWSS)
+# Nighthawk
+# 4.20.20
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2020 Nighthawk
+#
+# Version: V20-04-20-V1B (Arduino Version):
+        - beta version #1
+        - works with bme280, moisture sensors, real time clock
+        - has debug hooks, but not conforming to arduino debugging method yet
+        - No Blynk implimentation yet
+
+# Version: V20-07-01-V2B-V2B:
+        - beta version #2
+        - added Blynk mobile virtual pin reads (from arduino to mobile app)
+        - renamed files and consolidated code to better work with Blynk
+        - Code compiles but has not been tested with the Blynk mobile app yet
+            - got to get local server configured for an additional device & design new Blynk mobile app
 ########
 
 ########
-# checks for alarms from sensors and sets blynk led color & alarm status based on if an alarm is present
+# sets Blynk mobile app widget colors
 ########
 */
-#include "set_blynk_led_color.h"
+// arduino libraries
+#include <Arduino.h>
+
+// my libraries
+#include "growss.h"
+#include "growss_blynk.h"
+#include "hi_low_values.h"
+#include "check_alarms.h"
+#include "control.h"
+
 // set blynk app alarm widget/led color
 String BlynkLeds::set_blynk_alarm_led_color(bool alarmIsOn){
     String blynkLedColorVar;
     // set temp led color
     if(alarmIsOn) {
-        blynkLedColorVar = BlynkLeds::BLYNK_RED;
+        blynkLedColorVar = BLYNK_RED;
     }
     else
     {
-        blynkLedColorVar = BlynkLeds::BLYNK_GREEN;
+        blynkLedColorVar = BLYNK_GREEN;
     }
     return blynkLedColorVar;
 }
@@ -50,19 +72,19 @@ String BlynkLeds::set_blynk_moist_alarm_led_color(String moistAlarmStatus) {
     // set moisture1 led color
     String moistBlynkLedColorVar;
     if(moistAlarmStatus == "AIR") {
-        moistBlynkLedColorVar = BlynkLeds::BLYNK_ORANGE; //  LED is ORANGE on blynk app
+        moistBlynkLedColorVar = BLYNK_ORANGE; //  LED is ORANGE on blynk app
     }
     else if(moistAlarmStatus == "DRY") {
-        moistBlynkLedColorVar = BlynkLeds::BLYNK_YELLOW;   // LED is YELLOW on blynk app
+        moistBlynkLedColorVar = BLYNK_YELLOW;   // LED is YELLOW on blynk app
     }
     else if(moistAlarmStatus == "PERFECT") {
-        moistBlynkLedColorVar = BlynkLeds::BLYNK_GREEN;   // LED is Green on blynk app
+        moistBlynkLedColorVar = BLYNK_GREEN;   // LED is Green on blynk app
     }
     else if(moistAlarmStatus == "WATER") {
-        moistBlynkLedColorVar = BlynkLeds::BLYNK_STEEL_BLUE;   // LED is Steel blue on blynk app
+        moistBlynkLedColorVar = BLYNK_STEEL_BLUE;   // LED is Steel blue on blynk app
     }
     else {
-        moistBlynkLedColorVar = BlynkLeds::BLYNK_ORANGE; //  LED is ORANGE on blynk app
+        moistBlynkLedColorVar = BLYNK_ORANGE; //  LED is ORANGE on blynk app
     }        
     return moistBlynkLedColorVar;
 }
@@ -73,12 +95,11 @@ String BlynkLeds::set_blynk_on_led_color(bool alarmIsOn){
     String blynkLedColorVar;
     // set temp led color
     if(alarmIsOn) {
-        blynkLedColorVar = BlynkLeds::BLYNK_BLACK;
+        blynkLedColorVar = BLYNK_BLACK;
     }
     else
     {
-        blynkLedColorVar = BlynkLeds::BLYNK_GREEN;
+        blynkLedColorVar = BLYNK_GREEN;
     }
     return blynkLedColorVar;
 }
-

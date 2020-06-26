@@ -5,19 +5,26 @@ Author: Nighthawk
 Copywrite, 2020 MIT License
 
 ### Change Log:
+    - Date: 20-04-20 Version: V20-04-20-V1B (Arduino Version):
+        - Original working code
+            - beta version #1
+            - works with bme280, moisture sensors, real time clock
+            - has debug hooks, but not conforming to arduino debugging method yet
+            - No Blynk implimentation yet
 
-    - Date: 20-04-20  Version: V20-04-20-Arduino
-        - Original working code.
-            - temp, humidity, pressure & soil moisture
-            - alarms, hi & lows
-            - controlls light, exhaust fan, & humidifier
+    - Date" 20-07-01 Version: V20-07-01-V2B-V2B:
+        - beta version #2
+        - added Blynk mobile virtual pin reads (from arduino to mobile app)
+        - renamed files and consolidated code to better work with Blynk
+        - Code compiles but has not been tested with the Blynk mobile app yet
+            - got to get local server configured for an additional device & design new Blynk mobile app
 ___________________________________________________________________________________________
 
-### This is my design of a GROWbox Supervisor System (GROWSS) Arduino Version. The GROWSS system monitors temp, humidty, & soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & humidifier.
+### This is my design of a GROWbox Supervisor System (GROWSS) Arduino Version. The GROWSS system monitors temp, humidty, & soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & humidifier/dehumidifier.
 
-### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present.
+### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present. The Blynk mobile app will eventually control the hardware & sensors on the arduino as well as change the alarm & threashold values.
 
-### The GROWSS system will be used in a 2'x4'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
+### The GROWSS system will be used in a 4'x4'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
 
 ### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
@@ -39,28 +46,29 @@ ________________________________________________________________________________
 #### Grove Sensors: <http://wiki.seeedstudio.com/Grove_System/>
 #### Blynk C++ Library: <https://github.com/blynkkk/blynk-library>
 #### Blynk Local Server: <https://github.com/blynkkk/blynk-server>
+####  Understanding Scope in functions: <https://forum.arduino.cc/index.php?topic=383064.0>
+####  Debugging Using Serial.print: <https://www.electrosoftcloud.com/en/debug-with-serial-print/>
+####  Assigning IP addresses, etc for Ethernet Shields: <https://giovanniorgantini.wordpress.com/2015/03/02/using-the-arduino-ethernet-shield>
 
 #### Working Design goals are:
 
 - [x] Read Temp (temp/humidity sensor)
 - [x] Read Humidity (temp/humidity sensor)
 - [x] Read Soil Moisture for 2 plants (soil moisture sensor)
-- [ ] Save information to local storage as a tab delimeted text file.
 - [x] Increase humidity in grow box if humidity is too low (humidifier)
-- [ ] Decrease humidity in grow box if humidity is too high (de-humidifier)
-- [ ] IoT/Web page/mobile device access/control
-- [ ] Push alarms to me via text/email
 - [x] Turn grow lights on/off using RPI (relay)
 - [x] Turn on/off fan based on day or nite temp & humidity using RPI (relay)
-- [ ] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
+- [ ] IoT/Web page/mobile device access/control
+- [ ] Decrease humidity in grow box if humidity is too high (de-humidifier)
+- [ ] Enable/Disable email, text, fan, light, & humidifier/dehumidifier
+- [ ] Interactive controls for changing env values using blynk app
+- [ ] Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
+- [ ] Push alarms to me via text/email
 
 #### Icing on the cake would be:
-
-- [ ] Interactive controls for changing env values using blynk app
 - [ ] Automatically water plant when soil moisture is too low.
 - [ ] Retain values after a crash or reboot.
 - [ ] Catch more errors to avoid program crash from broken sensors, etc.
-- [ ] Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
 
 ___________________________________________________________________________________________
  

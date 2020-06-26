@@ -1,12 +1,24 @@
 /*
 ########
-# Version: V19-05-20-V1B (This is a working BETA vesion)
-    Nighthawk
-    4.20.20
-    Version: V20-20-04
-    
-    This project is released under The MIT License (MIT)
-    Copyright 2020 Nighthawk
+# The GROWbox Supervisor System (GROWSS)
+# Nighthawk
+# 4.20.20
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2020 Nighthawk
+#
+# Version: V20-04-20-V1B (Arduino Version):
+        - beta version #1
+        - works with bme280, moisture sensors, real time clock
+        - has debug hooks, but not conforming to arduino debugging method yet
+        - No Blynk implimentation yet
+
+# Version: V20-07-01-V2B-V2B:
+        - beta version #2
+        - added Blynk mobile virtual pin reads (from arduino to mobile app)
+        - renamed files and consolidated code to better work with Blynk
+        - Code compiles but has not been tested with the Blynk mobile app yet
+            - got to get local server configured for an additional device & design new Blynk mobile app
 ########
 
 ########
@@ -15,6 +27,7 @@
 */
 #include <Arduino.h>
 #include "growss.h"
+#include "growss_setup.h"
 
 void growss_welcome() {
     // print cool splash screen to stdio
